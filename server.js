@@ -6,17 +6,25 @@ var port    = 3007;
 app.set("view engine", "hbs");
 app.set('views', './views');
 
+app.use(express.static(__dirname + '/public'));
+
 app.get('/', function(req,res) {
-  res.send("Welcome to Pizza Express!");
+    res.render("index.hbs", {
+      message: "Welcome to Pizza Express!" });
 });
 
-app.get('/topping/:type', function(req, res, next) {
-  res.send(`${req.params.type} + pizza! Good choice.`);
+app.get('/toppings/:type', function(req, res, next) {
+  res.render("toppings.hbs", {
+    data: req.params.type
+  });
 });
 
 app.get('/order/:amount/:size', function(req, res, next) {
-     res.send(`Your order of ${req.params.amount} ${req.params.size} pizzas will be ready shortly.`);
- });
+     res.render("order.hbs", {
+       amount: req.params.amount,
+       size: req.params.size
+     });
+   });
 
 app.listen(port, function(){
   console.log('LISTENING ON PORT ' + port);
