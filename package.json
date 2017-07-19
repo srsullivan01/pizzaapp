@@ -1,0 +1,25 @@
+{
+  "name": "pizzaapp",
+  "version": "1.0.0",
+  "description": "\"a application that builds pizzas\"",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srsullivan01/pizzaapp.git"
+  },
+  "keywords": [
+    "pizza"
+  ],
+  "author": "rory sullivan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/srsullivan01/pizzaapp/issues"
+  },
+  "homepage": "https://github.com/srsullivan01/pizzaapp#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
